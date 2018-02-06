@@ -29,7 +29,8 @@ diffuse[-1,0] = r
 #initial values
 x = np.zeros((N, t))
 x[N/2, 0] = 1
-#simulate
+
+#simulate by explicit method
 for i in range(0, t-1):
     x[:, i+1] = diffuse.dot(x[:, i])
 
