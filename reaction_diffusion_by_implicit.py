@@ -1,10 +1,8 @@
 import numpy as np
-import sys
 
-def implicit_test(N=100, t=200, deltat=0.05, deltax=1):
+def implicit_test(N=100, t=200, deltat=0.4, deltax=1, D=1):
     #parameters
-    D = 0.5
-    theta = 0.5
+    theta = 0.5 
     #descretization
 
     #mesh size
@@ -27,7 +25,7 @@ def implicit_test(N=100, t=200, deltat=0.05, deltax=1):
 
     #initial values
     x = np.zeros((N, t))
-    x[int(N/2), 0] = 1
+    x[:,0] = np.sin(np.linspace(0, 2*np.pi, N))
 
     #simulate by explicit method
     for i in range(0, t-1):
